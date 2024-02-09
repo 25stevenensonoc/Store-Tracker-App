@@ -15,7 +15,7 @@ export default class App extends Component {
         messagePageDisplay:'none',
         user: '',
         password: '',
-        message: ''
+        message: '',
     }
     handleLogInPagePress = () => this.setState(state => ({
         logInPageDisplay: 'block',
