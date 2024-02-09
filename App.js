@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MapView from 'react-native-maps';
 import { AppRegistry, Text, View, StyleSheet, Image, Linking, ImageBackground, TouchableOpacity, TouchableHighlight, Dimensions, TextInput } from 'react-native';
 import Constants from 'expo-constants';
 
@@ -166,16 +167,14 @@ export default class App extends Component {
                     <View style={styles.homeContainer}>
                         <View style={styles.topBlock}>
                             <Text style={styles.topBoxText}>
-                             King Pin
+                                DiscountDetective
                             </Text>
                         </View>
-                        <ImageBackground
-                                source={{uri:'https://codehs.com/uploads/b13bf154d44cf27c72903fff6aefddd1'}}
-                                style={{alignItems: 'center', flex:1,}}>
+
                             <View style={styles.gap}>
                             <Image
-                                source={{ uri: 'https://codehs.com/uploads/0bd24f5f7a82e43742cf0fd3adb2776f' }}
-                                style={{ height: deviceHeight/3, width: deviceWidth/3}}
+                                source={{ uri: 'https://codehs.com/uploads/43820ffcb5cd9a40be908630621def9e' }}
+                                style={{ height: 425, width: 300}}
                             ></Image>
                             </View>
                             <View style={styles.buttonBox}> 
@@ -202,13 +201,6 @@ export default class App extends Component {
                             </View>
                             <View style={styles.gap2}> 
                             </View>
-                            <TouchableHighlight  style={styles.smallLink}
-                                onPress={() => Linking.openURL('https://www.vecteezy.com/video/1797568-fog-looping-on-a-black-background')}>
-                                    <Text>
-                                        Fog looping on a black background. Stock Videos by Vecteezy
-                                    </Text>
-                            </TouchableHighlight>
-                        </ImageBackground>
                     </View>   
                  </View>
                 <View style={{ display: this.state.messagePageDisplay }}>
@@ -240,14 +232,9 @@ export default class App extends Component {
                 <View style={{ display: this.state.mapPageDisplay}}>
                     <View style={styles.mapContainer}>
                         <View style={styles.imageContainer}>
-                            <ImageBackground
-                                source={{uri:'https://codehs.com/uploads/80edb521114dccbb305176eb24e8d039'}}
-                                style={styles.imageContainer}>
-                                <Image
-                                 source={{uri:'https://codehs.com/uploads/cdca37a38fceec4dd77101c529dec235'}}
-                                 style={{height:40, width:45, margin:10,}}
-                                ></Image>
-                            </ImageBackground>
+                            <MapView style={styles.imageContainer}>
+
+                            </MapView>
                         </View>
                     </View>
                     <View style={styles.buttonContainer}>   
@@ -331,7 +318,7 @@ const styles = StyleSheet.create({
     touchableButton1: {
         backgroundColor: '#9da1b5',
         height: deviceHeight/10,
-        width: deviceWidth/3,
+        width: deviceWidth/1.5,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
@@ -339,21 +326,23 @@ const styles = StyleSheet.create({
         borderWidth: 5,
     },
      buttonText: {
-        fontFamily: 'Cochin',
+        fontFamily: 'Damascus',
         color: '#1e1e38',
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: 'bold',
     },
     signUpContainer: {
         height: deviceHeight,
         width: deviceWidth,
         justifyContent: 'space-evenly',
+        alignItems: 'center',
+        backgroundColor: 'black',
     },
     logInContainer: {
         height: deviceHeight,
         width: deviceWidth,
         justifyContent: 'space-evenly',
-        backgroundColor: '#d2d3d4',
+        backgroundColor: 'black',
         alignItems: 'center',
     },
     rowContainer: {
@@ -380,7 +369,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     homeContainer: {
-        backgroundColor: 'black',
+        backgroundColor: 'slate',
         flexDirection: 'column',
         textAlign: 'center',
         alignItems: 'center',
@@ -388,21 +377,20 @@ const styles = StyleSheet.create({
         width: deviceWidth,
     },
     topBlock: {
-        backgroundColor: 'dimGrey',
-        height: 40,
+        height: 80,
         justifyContent: 'center',
         height: deviceHeight/10,
         width: deviceWidth,
     },
     topBoxText: {
-        color:'white',
-        fontSize: deviceHeight/17,
+        color:'black',
+        fontSize: 40,
         fontFamily: 'Damascus',
         fontWeight: 'bold',
         textAlign: 'center',
-        justifyContent: 'bottom',
+        justifyContent: 'flex-end',
         marginTop: 30,
-        marginBottom: deviceHeight/30,
+
     },
     gap: {
         height: deviceHeight/2,
@@ -426,9 +414,7 @@ const styles = StyleSheet.create({
         width: deviceWidth/1.5,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 5,
-        borderColor: 'white',
-        borderRadius: 20,
+
     },
     messagePageContainer: {
         flex: 1,
